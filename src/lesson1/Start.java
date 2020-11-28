@@ -1,9 +1,5 @@
 package lesson1;
-
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Start {
     public static void main(String[] args) {
