@@ -8,6 +8,8 @@
 //        В методе main создайте массив типа Animal, в который запишите животных всех имеющихся у вас типов.
 //        В цикле отправляйте их на прием к ветеринару.
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -25,15 +27,16 @@ public class Main {
         horse.eat();
         horse.makeNoise();
 
-        Animal[] animals = new Animal[]{dog, cat, horse};
+        ArrayList<Animal> animals = new ArrayList<>();
+        animals.add(dog);
+        animals.add(cat);
+        animals.add(horse);
+
         for (Animal animal : animals) {
             System.out.println(animal + "- відправити на прийом до ветеринара");
             animal.treatAnimal(animal);
             System.out.println("-----------------------------------------------------------------------------");
-
         }
-
     }
-
 
 }
