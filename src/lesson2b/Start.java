@@ -46,25 +46,25 @@ public class Start {
         int i = sc.nextInt();
         switch (i) {
             case 1:
-                library.AllBooks();
+                library.allBooks();
                 break;
             case 2:
-                library.AddBooks();
+                library.addBooks();
                 break;
             case 3:
-                library.NameAutor();
+                library.searchNameAutorBook();
                 break;
             case 4:
-                library.surNameAutor();
+                library.searchSurNameAutorBook();
                 break;
             case 5:
-                library.Name();
+                library.searchNameBook();
                 break;
             case 6:
-                library.Age();
+                library.searchAgeBook();
                 break;
             case 7:
-                library.Exit();
+                library.exit();
                 break;
             default:
                 break;

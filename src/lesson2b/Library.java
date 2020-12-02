@@ -28,27 +28,27 @@ public class Library {
                 '}';
     }
 
-    public void AllBooks() {
+    public void allBooks() {
         for (Books book : books) {
             System.out.println(book);
         }
     }
 
-    public void AddBooks() {
+    public void addBooks() {
         System.out.println("Додати книгу: ім'я автора книги, прізвище автора книги, назва книги, рік видання");
         Scanner name = new Scanner(System.in);
         Scanner surName = new Scanner(System.in);
         Scanner autor = new Scanner(System.in);
         Scanner age = new Scanner(System.in);
-        Books newBbooks = new Books(name.next(), surName.next(), autor.next(), age.next());
+        Books newBbooks = new Books(name.nextLine(), surName.nextLine(), autor.nextLine(), age.nextLine());
         books.add(newBbooks);
         System.out.println(books);
     }
 
-    public void NameAutor() {
-        Scanner nameAutor = new Scanner(System.in);
+    public void searchNameAutorBook() {
+        Scanner searchNameAutorBook = new Scanner(System.in);
         System.out.println("Введіть ім'я автора:");
-        String scan = nameAutor.next();
+        String scan = searchNameAutorBook.nextLine();
         ArrayList<Books> bookNameAutor = new ArrayList<Books>();
         for (Books book : books) {
             if (book.getNameAutor().equals(scan)) {
@@ -63,62 +63,62 @@ public class Library {
         }
     }
 
-    public void surNameAutor() {
-        Scanner surnameAutor = new Scanner(System.in);
+    public void searchSurNameAutorBook() {
+        Scanner searchSurNameAutorBook = new Scanner(System.in);
         System.out.println("Введіть прізвище автора:");
-        String scan = surnameAutor.next();
-        ArrayList<Books> bookSurNameAutor = new ArrayList<Books>();
+        String scan = searchSurNameAutorBook.nextLine();
+        ArrayList<Books> surNameAutorBook = new ArrayList<Books>();
         for (Books book : books) {
             if (book.getSurnameAutor().equals(scan)) {
-                bookSurNameAutor.add(book);
+                surNameAutorBook.add(book);
             } else {
             }
         }
-        if (bookSurNameAutor.size() == 0) {
+        if (surNameAutorBook.size() == 0) {
             System.out.println("Немає такої книги");
         } else {
-            System.out.println(bookSurNameAutor);
+            System.out.println(surNameAutorBook);
         }
     }
 
-    public void Name() {
-        Scanner name = new Scanner(System.in);
+    public void searchNameBook() {
+        Scanner searchNameBook = new Scanner(System.in);
         System.out.println("Введіть назву книги:");
-        String scan = name.nextLine();
-        ArrayList<Books> bookName = new ArrayList<Books>();
+        String scan = searchNameBook.nextLine();
+        ArrayList<Books> nameBook = new ArrayList<Books>();
         for (Books book : books) {
             if (book.getName().equals(scan)) {
-                bookName.add(book);
+                nameBook.add(book);
             } else {
             }
         }
-        if (bookName.size() == 0) {
+        if (nameBook.size() == 0) {
             System.out.println("Немає такої книги:");
 
         } else {
-            System.out.println(bookName);
+            System.out.println(nameBook);
         }
     }
 
-    public void Age() {
-        Scanner age = new Scanner(System.in);
+    public void searchAgeBook() {
+        Scanner searchAgeBook = new Scanner(System.in);
         System.out.println("Введіть рік видання книги:");
-        String scan = age.next();
-        ArrayList<Books> bookAge = new ArrayList<Books>();
+        String scan = searchAgeBook.nextLine();
+        ArrayList<Books> ageBook = new ArrayList<Books>();
         for (Books book : books) {
             if (book.getAge().equals(scan)) {
-                bookAge.add(book);
+                ageBook.add(book);
             } else {
             }
         }
-        if (bookAge.size() == 0) {
+        if (ageBook.size() == 0) {
             System.out.println("Немає такої книги:");
         } else {
-            System.out.println(bookAge);
+            System.out.println(ageBook);
         }
     }
 
-    public void Exit() {
+    public void exit() {
         System.out.println("Вихід");
     }
 }
