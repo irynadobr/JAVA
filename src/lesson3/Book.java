@@ -42,7 +42,7 @@ public class Book implements Printable {
     }
 
     public static void printBook(Printable[] printable) {
-        ArrayList<Printable> books = new ArrayList<>();
+      ArrayList<Printable> books = new ArrayList();
         for (Printable printables : printable) {
             if (printables instanceof Book) {
                 books.add(printables);
