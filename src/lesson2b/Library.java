@@ -35,12 +35,16 @@ public class Library {
     }
 
     public void addBooks() {
-        System.out.println("Додати книгу: ім'я автора книги, прізвище автора книги, назва книги, рік видання");
-        Scanner name = new Scanner(System.in);
-        Scanner surName = new Scanner(System.in);
-        Scanner autor = new Scanner(System.in);
-        Scanner age = new Scanner(System.in);
-        Books newBbooks = new Books(name.nextLine(), surName.nextLine(), autor.nextLine(), age.nextLine());
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter surname: ");
+        String surName = scanner.nextLine();
+        System.out.print("Enter author: ");
+        String autor = scanner.nextLine();
+        System.out.print("Enter age: ");
+        String age =scanner.nextLine();
+        Books newBbooks = new Books(name, surName, autor, age);
         books.add(newBbooks);
         System.out.println(books);
     }
