@@ -87,7 +87,7 @@ public class Library {
 
     public void searchNameBook() {
         Scanner searchNameBook = new Scanner(System.in);
-        System.out.println("Введіть назву книги:");
+        System.out.println("Введіть назву книги: ");
         String scan = searchNameBook.nextLine();
         ArrayList<Books> nameBook = new ArrayList<Books>();
         for (Books book : books) {

@@ -1,5 +1,4 @@
 package lesson2b;
-
 import java.util.Objects;
 
 public class Books {

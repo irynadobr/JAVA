@@ -20,16 +20,11 @@ import java.util.Scanner;
 public class Start {
     public static void main(String[] args) {
 
-        Books books1 = new Books("Тарас", "Шевченко", "Кобзар", "1860");
-        Books books2 = new Books("Леся", "Українка", "Поетичні твори", "1981");
-        Books books3 = new Books("Генрік", "Сінкевич", "Куда ідеш", "1989");
-        Books books4 = new Books("Тарас", "Шевченко", "Кобзар", "1972");
-
         ArrayList<Books> books = new ArrayList<>();
-        books.add(books1);
-        books.add(books2);
-        books.add(books3);
-        books.add(books4);
+        books.add(new Books("Тарас", "Шевченко", "Кобзар", "1860"));
+        books.add(new Books("Леся", "Українка", "Поетичні твори", "1981"));
+        books.add(new Books("Генрік", "Сінкевич", "Куда ідеш", "1989"));
+        books.add(new Books("Тарас", "Шевченко", "Кобзар", "1972"));
 
         Library library = new Library(books);
 
