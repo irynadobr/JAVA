@@ -41,47 +41,47 @@ public class Library {
         System.out.print("Enter surname: ");
         String surName = scanner.nextLine();
         System.out.print("Enter author: ");
-        String autor = scanner.nextLine();
+        String author = scanner.nextLine();
         System.out.print("Enter age: ");
         String age =scanner.nextLine();
-        Books newBbooks = new Books(name, surName, autor, age);
+        Books newBbooks = new Books(name, surName, author, age);
         books.add(newBbooks);
         System.out.println(books);
     }
 
-    public void searchNameAutorBook() {
-        Scanner searchNameAutorBook = new Scanner(System.in);
+    public void searchNameAuthorBook() {
+        Scanner searchNameAuthorBook = new Scanner(System.in);
         System.out.println("Введіть ім'я автора:");
-        String scan = searchNameAutorBook.nextLine();
-        ArrayList<Books> bookNameAutor = new ArrayList<Books>();
+        String scan = searchNameAuthorBook.nextLine();
+        ArrayList<Books> bookNameAuthor = new ArrayList<Books>();
         for (Books book : books) {
             if (book.getNameAutor().equals(scan)) {
-                bookNameAutor.add(book);
+                bookNameAuthor.add(book);
             } else {
             }
         }
-        if (bookNameAutor.size() == 0) {
+        if (bookNameAuthor.size() == 0) {
             System.out.println("Немає такої книги");
         } else {
-            System.out.println(bookNameAutor);
+            System.out.println(bookNameAuthor);
         }
     }
 
-    public void searchSurNameAutorBook() {
-        Scanner searchSurNameAutorBook = new Scanner(System.in);
+    public void searchSurNameAuthorBook() {
+        Scanner searchSurNameAuthorBook = new Scanner(System.in);
         System.out.println("Введіть прізвище автора:");
-        String scan = searchSurNameAutorBook.nextLine();
-        ArrayList<Books> surNameAutorBook = new ArrayList<Books>();
+        String scan = searchSurNameAuthorBook.nextLine();
+        ArrayList<Books> surNameAuthorBook = new ArrayList<Books>();
         for (Books book : books) {
             if (book.getSurnameAutor().equals(scan)) {
-                surNameAutorBook.add(book);
+                surNameAuthorBook.add(book);
             } else {
             }
         }
-        if (surNameAutorBook.size() == 0) {
+        if (surNameAuthorBook.size() == 0) {
             System.out.println("Немає такої книги");
         } else {
-            System.out.println(surNameAutorBook);
+            System.out.println(surNameAuthorBook);
         }
     }
 

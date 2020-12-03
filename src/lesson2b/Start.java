@@ -54,10 +54,10 @@ public class Start {
                     library.addBooks();
                     break;
                 case 3:
-                    library.searchNameAutorBook();
+                    library.searchNameAuthorBook();
                     break;
                 case 4:
-                    library.searchSurNameAutorBook();
+                    library.searchSurNameAuthorBook();
                     break;
                 case 5:
                     library.searchNameBook();

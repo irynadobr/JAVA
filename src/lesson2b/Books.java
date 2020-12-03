@@ -3,8 +3,8 @@ package lesson2b;
 import java.util.Objects;
 
 public class Books {
-    private String nameAutor;
-    private String surnameAutor;
+    private String nameAuthor;
+    private String surnameAuthor;
     private String name;
     private String age;
 
@@ -12,26 +12,26 @@ public class Books {
     }
 
     public Books(String nameAutor, String surnameAutor, String name, String age) {
-        this.nameAutor = nameAutor;
-        this.surnameAutor = surnameAutor;
+        this.nameAuthor = nameAutor;
+        this.surnameAuthor = surnameAutor;
         this.name = name;
         this.age = age;
     }
 
     public String getNameAutor() {
-        return nameAutor;
+        return nameAuthor;
     }
 
     public void setNameAutor(String nameAutor) {
-        this.nameAutor = nameAutor;
+        this.nameAuthor = nameAutor;
     }
 
     public String getSurnameAutor() {
-        return surnameAutor;
+        return surnameAuthor;
     }
 
     public void setSurnameAutor(String surnameAutor) {
-        this.surnameAutor = surnameAutor;
+        this.surnameAuthor = surnameAutor;
     }
 
     public String getName() {
@@ -53,8 +53,8 @@ public class Books {
     @Override
     public String toString() {
         return "Books{" +
-                "nameAutor='" + nameAutor + '\'' +
-                ", surnameAutor='" + surnameAutor + '\'' +
+                "nameAutor='" + nameAuthor + '\'' +
+                ", surnameAutor='" + surnameAuthor + '\'' +
                 ", name='" + name + '\'' +
                 ", age='" + age + '\'' +
                 '}';
@@ -65,14 +65,14 @@ public class Books {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Books books = (Books) o;
-        return Objects.equals(nameAutor, books.nameAutor) &&
-                Objects.equals(surnameAutor, books.surnameAutor) &&
+        return Objects.equals(nameAuthor, books.nameAuthor) &&
+                Objects.equals(surnameAuthor, books.surnameAuthor) &&
                 Objects.equals(name, books.name) &&
                 Objects.equals(age, books.age);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nameAutor, surnameAutor, name, age);
+        return Objects.hash(nameAuthor, surnameAuthor, name, age);
     }
 }
