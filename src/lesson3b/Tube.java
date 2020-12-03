@@ -1,6 +1,6 @@
 package lesson3b;
 
-public class Tube implements Tool{
+public class Tube implements Tool {
     private String name;
     private int diameter;
 
@@ -38,6 +38,6 @@ public class Tube implements Tool{
 
     @Override
     public void play() {
-      System.out.println("play "+this.getName()+ "  with  "+ "diameter: "+ this.getDiameter());
+        System.out.println("play " + this.getName() + "  with  " + "diameter: " + this.getDiameter());
     }
 }

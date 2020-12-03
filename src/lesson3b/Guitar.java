@@ -1,6 +1,6 @@
 package lesson3b;
 
-public class Guitar implements Tool{
+public class Guitar implements Tool {
     private String name;
     private int numberStrings;
 
@@ -38,7 +38,7 @@ public class Guitar implements Tool{
 
     @Override
     public void play() {
-        System.out.println("play "+this.getName()+ "   with    "+ "number of strings:  "+ this.getNumberStrings());
+        System.out.println("play " + this.getName() + "   with    " + "number of strings:  " + this.getNumberStrings());
     }
 
 }

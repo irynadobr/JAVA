@@ -1,6 +1,6 @@
 package lesson3b;
 
-public class Drum implements Tool{
+public class Drum implements Tool {
     private String name;
     private int size;
 
@@ -38,6 +38,6 @@ public class Drum implements Tool{
 
     @Override
     public void play() {
-        System.out.println("play "+this.getName()+ "  with  "+ "size: "+ this.getSize());
+        System.out.println("play " + this.getName() + "  with  " + "size: " + this.getSize());
     }
 }
