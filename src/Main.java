@@ -16,7 +16,6 @@ public class Main {
         Dog dog = new Dog("dog food", "Lviv", "dog", "barks");
         Cat cat = new Cat("cat food", "Kiev", "cat", "meovs");
         Horse horse = new Horse("grass", "Kiev", "horse", "igo-go");
-
         dog.sleep();
         dog.eat();
         dog.makeNoise();
@@ -37,6 +36,7 @@ public class Main {
             animal.treatAnimal(animal);
             System.out.println("-----------------------------------------------------------------------------");
         }
+
     }
 
 }
