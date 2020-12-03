@@ -13,22 +13,15 @@ package lesson3;
 
 public class Start {
     public static void main(String[] args) {
-        Printable printable1 = new Book("Java", "Bert Beyts");
-        Printable printable2 = new Magazine("Moda", 2018);
-        Printable printable3 = new Book("JS", "Golovatiy");
-        Printable printable4 = new Magazine("Health", 2019);
-        Printable printable5 = new Book("Python", "Kerol Vorderman");
-        Printable printable6 = new Magazine("Zog", 2017);
-        Printable printable7 = new Magazine("Model", 2015);
 
         Printable[] printable = new Printable[7];
-        printable[0] = printable1;
-        printable[1] = printable2;
-        printable[2] = printable3;
-        printable[3] = printable4;
-        printable[4] = printable5;
-        printable[5] = printable6;
-        printable[6] = printable7;
+        printable[0] = new Book("Java", "Bert Beyts");
+        printable[1] = new Magazine("Moda", 2018);
+        printable[2] = new Book("JS", "Golovatiy");
+        printable[3] = new Magazine("Health", 2019);
+        printable[4] = new Book("Python", "Kerol Vorderman");
+        printable[5] = new Magazine("Zog", 2017);
+        printable[6] = new Magazine("Model", 2015);
 
         for (Printable printables : printable)
             printables.print();
