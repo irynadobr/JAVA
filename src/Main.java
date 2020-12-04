@@ -13,25 +13,15 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        Dog dog = new Dog("dog food", "Lviv", "dog", "barks");
-        Cat cat = new Cat("cat food", "Kiev", "cat", "meovs");
-        Horse horse = new Horse("grass", "Kiev", "horse", "igo-go");
-        dog.sleep();
-        dog.eat();
-        dog.makeNoise();
-        cat.sleep();
-        cat.eat();
-        cat.makeNoise();
-        horse.sleep();
-        horse.eat();
-        horse.makeNoise();
-
         ArrayList<Animal> animals = new ArrayList<>();
-        animals.add(dog);
-        animals.add(cat);
-        animals.add(horse);
+        animals.add(new Dog("dog food", "Lviv", "dog", "barks"));
+        animals.add(new Cat("cat food", "Kiev", "cat", "meovs"));
+        animals.add(new Horse("grass", "Kiev", "horse", "igo-go"));
 
         for (Animal animal : animals) {
+            animal.sleep();
+            animal.eat();
+            animal.makeNoise();
             System.out.println(animal + "- відправити на прийом до ветеринара");
             animal.treatAnimal(animal);
             System.out.println("-----------------------------------------------------------------------------");
