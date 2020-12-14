@@ -7,7 +7,7 @@ public enum ProductType {
 
 
     String type;
-    String sex;
+
     ProductType(String type) {
         this.type = type;
 
