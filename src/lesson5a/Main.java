@@ -15,11 +15,10 @@ public class Main {
         pets.add(new Pet("морська свинка"));
    Person person1 = new Person("Aleks");
    Person person2 = new Person("Oleg");
-        Map<Person, List <Pet>> club= new LinkedHashMap<>();
-
+        Map <Person, List <Pet>> club = new LinkedHashMap<>();
 
         System.out.println("додати учасника в клуб");
-        System.out.println("додати додати тваринку до учасника клубу");
+        System.out.println("додати тваринку до учасника клубу");
         System.out.println("видалити тваринку з власника");
         System.out.println("видалити учасника клубу");
         System.out.println("видалити конкретну тваринку з усіх власників");

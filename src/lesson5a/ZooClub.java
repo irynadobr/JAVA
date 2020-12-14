@@ -3,7 +3,7 @@ package lesson5a;
 import java.util.*;
 
 public class ZooClub {
-    private Map <Person, List <Pet>> club;
+    private Map <Person, List <Pet>> club = new LinkedHashMap<>();
 
 
     public ZooClub() {
