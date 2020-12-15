@@ -41,33 +41,66 @@ public class Store {
                 '}';
     }
 
-    public void addProduct(ProductType productType) {
+    public String scannerString(String enter) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Додати в магазин product type - " + productType.type + " :  ");
-        System.out.print("Enter name: ");
-        String newName = scanner.next();
-        System.out.print("Enter price: ");
-        double newPrice = scanner.nextDouble();
-        System.out.print("Enter date of manufacture: ");
-        String newDateOfManufacture = scanner.next();
+        System.out.print("Enter  " + enter + ":  ");
+        String sk = scanner.next();
+        return sk;
+    }
 
-        Product newProduct = new Product(newName, newPrice, productType, newDateOfManufacture);
+    public double scannerDouble() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter price: ");
+        double sk = scanner.nextDouble();
+        return sk;
+    }
+
+    public int scannerInt() {
+        Scanner scanner = new Scanner(System.in);
+        int sk = scanner.nextInt();
+        return sk;
+
+    }
+
+
+//    public void addProduct(ProductType productType) {
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Додати в магазин product type - " + productType.type + " :  ");
+//        System.out.print("Enter name: ");
+//        String newName = scanner.next();
+//        System.out.print("Enter price: ");
+//        double newPrice = scanner.nextDouble();
+//        System.out.print("Enter date of manufacture: ");
+//        String newDateOfManufacture = scanner.next();
+//
+//        Product newProduct = new Product(newName, newPrice, productType, newDateOfManufacture);
+//
+//        if (newProduct.getPrice() > 0 && !newProduct.getName().matches(".*\\d.*")) {
+//            products.add(newProduct);
+//        }
+//        System.out.println(products);
+//
+//    }
+
+    public void addProduct(ProductType productType) {
+        System.out.println("Додати в магазин product type - " + productType.type + " :  ");
+        Product newProduct = new Product(scannerString("name"), scannerDouble(), productType, scannerString("date of manufacture: "));
         if (newProduct.getPrice() > 0 && !newProduct.getName().matches(".*\\d.*")) {
             products.add(newProduct);
         }
         System.out.println(products);
+
     }
 
-    public void removeProduct() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Remove the product from the store by name: ");
-        System.out.print("Enter name: ");
-        String productName = scanner.next();
 
+    public void removeProduct() {
+
+        System.out.println("Remove the product from the store by name: ");
         Iterator<Product> iterator = products.iterator();
+        String name = scannerString("name");
         while (iterator.hasNext()) {
             Product product = iterator.next();
-            if (product.getName().equals(productName)) {
+            if (product.getName().equals(name)) {
                 iterator.remove();
                 System.out.println("Product - " + product.getName() + ", видалено");
             }
@@ -90,11 +123,12 @@ public class Store {
             System.out.println(products);
         }
     }
+
     public void premiumProduct() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Преміум продукти, які дорощі вказаної суми: ");
-        System.out.print("Enter priceVelue: ");
+        System.out.print("Enter priceValue: ");
         double priceValue = scanner.nextInt();
         List<Product> premiumProduct = new ArrayList<>();
         for (Product product : products) {
@@ -137,10 +171,9 @@ public class Store {
     }
 
     public void addCertianAmountProducts(ProductType productType) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Додати продукти типу - "+ productType.type+ " у кількості: ");
+        System.out.println("Додати продукти типу - " + productType.type + " у кількості: ");
         System.out.print("Enter number: ");
-        int number = scanner.nextInt();
+        int number = scannerInt();
         for (int i = 1; i <= number; i++) {
             addProduct(productType);
         }
