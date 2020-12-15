@@ -41,46 +41,73 @@ public class Store {
                 '}';
     }
 
+    public void addProduct(ProductType productType) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Додати в магазин product type - " + productType.type + " :  ");
+        System.out.print("Enter name: ");
+        String newName = scanner.next();
+        System.out.print("Enter price: ");
+        double newPrice = scanner.nextDouble();
+        System.out.print("Enter date of manufacture: ");
+        String newDateOfManufacture = scanner.next();
 
-    public void addProduct(Product product) {
-        if (product.getPrice() > 0 && !product.getName().matches(".*\\d.*")) {
-            products.add(product);
+        Product newProduct = new Product(newName, newPrice, productType, newDateOfManufacture);
+        if (newProduct.getPrice() > 0 && !newProduct.getName().matches(".*\\d.*")) {
+            products.add(newProduct);
         }
+        System.out.println(products);
     }
 
+    public void removeProduct() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Remove the product from the store by name: ");
+        System.out.print("Enter name: ");
+        String productName = scanner.next();
 
-    public void removeProduct(String productName) {
         Iterator<Product> iterator = products.iterator();
         while (iterator.hasNext()) {
             Product product = iterator.next();
             if (product.getName().equals(productName)) {
                 iterator.remove();
-                System.out.println("Product, " + product.getName() + ", was deleted!");
-            }
-        }
-
-    }
-
-
-    public void doublingPrice(ProductType productType) {
-
-        for (Product product : products) {
-            if (product.getProductType().equals(productType)) {
-                product.setPrice(product.getPrice() * 2.0);
+                System.out.println("Product - " + product.getName() + ", видалено");
             }
         }
         System.out.println(products);
     }
 
-    public List<Product> premiumProduct(double priceValue) {
+    public void doublingPrice(ProductType productType) {
+        List<Product> newProduct = new ArrayList<>();
+        for (Product product : products) {
+            if (product.getProductType().equals(productType)) {
+                product.setPrice(product.getPrice() * 2.0);
+                newProduct.add(product);
+            }
+        }
+        if (newProduct.isEmpty()) {
+            System.out.println("В магазині немає продутків типу - " + productType.type);
+        } else {
+            System.out.println("Збільшено удвічі ціну для продуктів типу - " + productType.type + " :  ");
+            System.out.println(products);
+        }
+    }
+    public void premiumProduct() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Преміум продукти, які дорощі вказаної суми: ");
+        System.out.print("Enter priceVelue: ");
+        double priceValue = scanner.nextInt();
         List<Product> premiumProduct = new ArrayList<>();
         for (Product product : products) {
             if (product.getPrice() > priceValue) {
                 premiumProduct.add(product);
-
             }
         }
-        return premiumProduct;
+        if (premiumProduct.isEmpty()) {
+
+            System.out.println("В магазині немає преміум товарів");
+            return;
+        }
+        System.out.println("у нашому магазині продаються такі преміум товари:  " + premiumProduct);
     }
 
     public void sumProductType(ProductType productType) {
@@ -88,23 +115,36 @@ public class Store {
         double sumProductType = 0;
         for (Product product : products) {
             if (product.getProductType().equals(productType)) {
-                sumProductType = sumProductType + product.getPrice();
-
+                sumProductType += product.getPrice();
             }
 
         }
-        System.out.println("загальна сума товарів " + sumProductType);
+        if (sumProductType == 0) {
+
+            System.out.println("В магазині немає продуктів типу - " + productType.type);
+        } else {
+            System.out.println("Загальна сума продуктів типу - " + productType.type + " :  " + sumProductType);
+        }
     }
 
     public void averageSumProduct() {
         double averageSumProduct = 0;
         for (Product product : products) {
-            averageSumProduct = averageSumProduct + product.getPrice();
-
+            averageSumProduct += product.getPrice();
         }
         averageSumProduct = averageSumProduct / products.size();
         System.out.println("Середня вартість усіх товарів в магазині: " + averageSumProduct);
     }
 
+    public void addCertianAmountProducts(ProductType productType) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Додати продукти типу - "+ productType.type+ " у кількості: ");
+        System.out.print("Enter number: ");
+        int number = scanner.nextInt();
+        for (int i = 1; i <= number; i++) {
+            addProduct(productType);
+        }
+
+    }
 
 }

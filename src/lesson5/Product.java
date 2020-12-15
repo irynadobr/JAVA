@@ -8,7 +8,7 @@ public class Product {
     private ProductType productType;
     private String dateOfManufacture;
 
-    public Product() {
+    public Product(String name, double price, String productType, String dateOfManufacture) {
     }
 
     public Product(String name, double price, ProductType productType, String dateOfManufacture) {

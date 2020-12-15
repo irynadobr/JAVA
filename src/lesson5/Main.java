@@ -13,37 +13,38 @@
 //        6. Порахувати середню вартість усіх товарів в магазині і вивести це число на екран
 //
 //        Для роботи з колекцією варто ще створити метод, який наповнить наш магазин одразу же ж певною кількістю продуктів
-
 package lesson5;
 
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-
         Store store = new Store();
-        //        1. Додати продукт в магазин. Але перш ніж додати його в ліст,
+//        1. Додати продукт в магазин. Але перш ніж додати його в ліст,
 //        здійснити валідацію (чи ціна не від'ємна, чи в назві товару не присутні цифри).
-        store.addProduct(new Product("bred", 10.0, ProductType.Products, "29.11.2020"));
-        store.addProduct(new Product("milk", 18.0, ProductType.Products, "20.11.2020"));
-        store.addProduct(new Product("oil", 10.0, ProductType.Products, "10.05.2020"));
-        store.addProduct(new Product("boots", 1500.0, ProductType.Shoes, "25.11.2019"));
-        store.addProduct(new Product("dress", 1000.0, ProductType.Clothing, "20.07.2020"));
-        System.out.println(store);
+        store.addProduct(ProductType.Clothing);
+        store.addProduct(ProductType.Products);
+        store.addProduct(ProductType.Shoes);
 //        2. Видалити продукт з магазину по назві.
-        store.removeProduct("oil");
+        store.removeProduct();
 //        3. Збільшити ціну для вказаного у параметрі типу продуктів удвічі
         store.doublingPrice(ProductType.Shoes);
+        store.doublingPrice(ProductType.Clothing);
+        store.doublingPrice(ProductType.Products);
 //        4. Усі товари, дорожчі вказаної суми, записати у окремий ліст і вивести його на екран
 //        (наприклад "В нашому магазині продаються такі преміум товари:...)
-        System.out.println("у нашому магазині продаються такі преміум товари:  " + store.premiumProduct(1000.0));
+        store.premiumProduct();
 //        5. Порахувати загальну суму усіх товарів вказаного у вхідному параметрі типу і вивести її на екран
         store.sumProductType(ProductType.Products);
+        store.sumProductType(ProductType.Clothing);
+        store.sumProductType(ProductType.Shoes);
 //        6. Порахувати середню вартість усіх товарів в магазині і вивести це число на екран
         store.averageSumProduct();
 //        Для роботи з колекцією варто ще створити метод, який наповнить наш магазин одразу же ж певною кількістю продуктів
-      //  store.addCertianAmountProducts(2);
-
-
+        store.addCertianAmountProducts(ProductType.Products);
+        store.addCertianAmountProducts(ProductType.Clothing);
+        store.addCertianAmountProducts(ProductType.Shoes);
+//
     }
 }
