@@ -59,13 +59,13 @@ public class ZooClub {
         return sk;
     }
 
-
+//1) додати учасника в клуб
     public void addPerson(Person person) {
         club.put(person, new ArrayList<>());
         System.out.println(" В зооклуб додано: " + person);
         printZooClub(club);
     }
-
+//1) додати учасника в клуб по id person
     public void addPetPersonId(int idPerson, Pet pet) {
         Set<Person> persons = club.keySet();
         List<Person> personClub = new ArrayList<>();
@@ -83,7 +83,7 @@ public class ZooClub {
         }
         printZooClub(club);
     }
-
+//2) додати тваринку до учасника клубу
     public void addPetPerson(Person person, Pet pet) {
         if (club.containsKey(person)) {
             club.get(person).add(pet);
@@ -93,7 +93,7 @@ public class ZooClub {
             System.out.println("Такий person -  не є учасником клубу");
         }
     }
-
+//3) видалити тваринку з власника
     public void removePetWithPerson(Person person, Pet pet) {
         if (club.containsKey(person)) {
             if (club.get(person).contains(pet)) {
@@ -107,7 +107,7 @@ public class ZooClub {
         }
         printZooClub(club);
     }
-
+//4) видалити учасника клубу
     public void removePerson(Person person) {
         if (club.containsKey(person)) {
             club.remove(person);
@@ -117,7 +117,7 @@ public class ZooClub {
             System.out.println(person.getNamePerson() + "-  не є учасником клубу");
         }
     }
-
+//5) видалити конкретну тваринку з усіх власників
     public void removePetAllPerson(String namePet, Map<Person, List<Pet>> club) {
         if (club.isEmpty()) {
             System.out.println("В zooklub немає учасників");
@@ -143,7 +143,7 @@ public class ZooClub {
         printZooClub(club);
     }
 
-
+//6) вивести на екран зооклуб
     public void printZooClub(Map<Person, List<Pet>> club) {
         if (club.isEmpty()) {
             System.out.println("В zooklub немає учасників");
