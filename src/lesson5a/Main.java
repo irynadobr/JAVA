@@ -30,27 +30,25 @@ public class Main {
 
             switch (zooClub.scannerInt("зробіть свій вибір: ")) {
                 case 1:
-                    zooClub.addPerson(new Person(2, "Oleg", 25, "Lviv"));
+                    zooClub.addPerson();
                     break;
                 case 2:
                     //додати тваринку до учасника клубу по  person:
-                    zooClub.addPetPerson(new Person(2, "Oleg", 25, "Lviv"),
-                            new Pet(1, "кіт", 3));
+                    zooClub.addPetPerson();
                     //додати тваринку до учасника клубу по id person:
-                    zooClub.addPetPersonId(3, new Pet(2, "pes", 2));
+                    zooClub.addPetPersonId();
                     break;
                 case 3:
 
-                    zooClub.removePetWithPerson(new Person(1, "Igor", 20, "Lviv"),
-                            new Pet(3, "папуга", 5));
+                    zooClub.removePetWithPerson();
 
                     break;
                 case 4:
 
-                    zooClub.removePerson(new Person(2, "Oleg", 25, "Lviv"));
+                    zooClub.removePerson();
                     break;
                 case 5:
-                    zooClub.removePetAllPerson("кіт", club);
+                    zooClub.removePetAllPerson(club);
 
                     break;
                 case 6:
