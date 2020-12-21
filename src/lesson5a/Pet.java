@@ -9,8 +9,6 @@ public class Pet {
     private String namePet;
     private int age;
 
-
-
     public Pet() {
     }
 
