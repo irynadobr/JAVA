@@ -45,22 +45,23 @@ public class Start {
         Movie movie1 = new Movie("Зоряні війни", duration1);
         Movie movie2 = new Movie("За двума зайцями", duration2);
         Movie movie3 = new Movie("Фараон", duration3);
-       Seanse seanse1 =new Seanse(movie1,startTime1);
+
+        Seanse seanse1 =new Seanse(movie1,startTime1);
         Seanse seanse2 =new Seanse(movie2,startTime2);
         Seanse seanse3 =new Seanse(movie3,startTime3);
 
         Cinema cinema = new Cinema(new Time(9, 00), new Time(23, 59));
 
         cinema.addSeanses("MONDAY", seanse1, seanse2, seanse3);
-        cinema.addSeanses("FRIDAY", seanse2, seanse3);
 
-        cinema.addSeanse("TUESDAY",seanse2);
+        cinema.addSeanse("TUESDAY",seanse1);
+
+        cinema.addSeanses("FRIDAY", seanse1, seanse3);
 
         cinema.removeMovie(movie3);
-        System.out.println(cinema);
 
-        cinema.removeSeanse("Monday", seanse3);
+        cinema.removeSeanse("MONDAY", seanse1);
+
         System.out.println(cinema);
     }
-
 }

@@ -66,14 +66,17 @@ public class Cinema {
                 '}';
     }
 
+public void print() {
+    System.out.println("-----------------------------------------------------------------------------------------------");
+}
 
     public void addSeanses(String day, Seanse... seanses) {
         for (Seanse seanse : seanses) {
             addSeanse(day, seanse);
         }
         System.out.println("Графік сеансів кінотеатру:  " + "\r\n" + cinema +
-                "open cinema: " + open + "  close cinema: " + close);
-        System.out.println("-------------------------------------------------------------------------");
+                " open cinema: " + open + "  close cinema: " + close);
+       print();
     }
 
 
@@ -86,14 +89,14 @@ public class Cinema {
                 if (cinema.containsKey(days)) {
                     cinema.get(days).addSeanse(seanse);
                     System.out.println(day);
-                    System.out.println("-------------------------------------------------------------------------");
+                    print();
                     return;
                 }
                 Schedule schedule = new Schedule();
                 schedule.addSeanse(seanse);
                 cinema.put(days, schedule);
                 System.out.println(day);
-                System.out.println("-------------------------------------------------------------------------");
+               print();
                 return;
             }
 
@@ -108,13 +111,15 @@ public class Cinema {
         Iterator<Schedule> scheduleIterator = this.cinema.values().iterator();
         while (scheduleIterator.hasNext()) {
             Schedule schedule = scheduleIterator.next();
-            s = schedule.getSeanses().size();
+            s+= schedule.getSeanses().size();
             schedule.getSeanses().removeIf(seance -> seance.getMovie().equals(movie));
-            s1 = schedule.getSeanses().size();
+            s1+= schedule.getSeanses().size();
         }
-        if (s1 < s) {
-            System.out.println(" видалено з графіку кінотеатру фільм: " + movie.title);
-
+        int n = s-s1;
+        if (n!=0) {
+            print();
+            System.out.println("З графіку кінотеатру видалено "+ n+" сеанс(и) фільму: " + movie.title);
+            print();
         } else {
             System.out.println(" у графіку кінотеатру немає  фільму: " + movie.getTitle());
         }
@@ -125,20 +130,24 @@ public class Cinema {
             if (days.name().equals(day)) {
                 if (cinema.containsKey(days)) {
                     if (cinema.get(days).getSeanses().contains(seanse)) {
+                        print();
                         cinema.get(days).removeSeanse(seanse);
-                        System.out.println("-------------------------------------------------------------------------");
+                        print();
                         return;
                     }
                 }
+                print();
                 System.out.println("в " + day + " немає  такого сеансу, " + seanse + " не видалено");
                 return;
             }
         }
+        print();
         System.out.println("в " + day + " кінотеатр не працює, " + seanse + " не видалено з графіку");
     }
 
     public boolean considerationCloseAndOpenAtFormationSeanse(Seanse seanse) {
         if (getOpen() == null || getClose() == null) {
+            print();
             System.out.println("Не введено час відкриття і закриття кінотеатру");
             return false;
         }
@@ -152,7 +161,7 @@ public class Cinema {
                         (seanse.getStartTime().getMin() - this.open.getMin()) < 0)) {
             System.out.println("При формуванні сеансу: " + seanse + " не враховано час відкриття і закриття кінотеатру" + "\r\n" +
                     " фільм: " + seanse.getMovie().getTitle() + " не додано до графіку сеансів, " + "\r\n" + "кінотеатр в цей час зачинено.");
-            System.out.println("-------------------------------------------------------------------------");
+            print();
             return false;
         }
         return true;
