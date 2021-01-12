@@ -72,13 +72,29 @@ public class Start {
         bookList.forEach( System.out::println);
 
         //Додаткові:
-        //Згенерувати List<Person>, які народились у 1990 році
+        //Згенерувати List<Person>, які народились у 1990 році і збільшити їх дату народження на 10 років
 
         List<Person>personList=persons.stream()
-                .filter(person -> person.getBirthday().getYear()==1990).collect(Collectors.toList());
+                .filter(person -> person.getBirthday().getYear()==1990).
+                        peek(person -> person
+                                .setBirthday(LocalDate.of
+                                        (person.getBirthday().getYear()+10
+                                                , person.getBirthday().getMonth()
+                                                , person.getBirthday().getDayOfMonth())))
+                .collect(Collectors.toList());
         personList.forEach(System.out::println);
 
-     //
+
+     //Згенерувати map <Person,Integer>, де  у person зменшити вік на 5 років, integer -загальна кількість книжок, які має людина
+
+     Map<Person, Integer> personIntegerMap1=persons.stream()
+             .peek(person -> person.setAge(person.getAge()-5)).collect(Collectors.toMap(person -> person,
+                     person ->  person.getBooks().size()));
+
+personIntegerMap1.forEach((k,v)->
+    System.out.println(k + "\r\n"+ "загальна кількість книжок, які має " + k.getName() + ", дорівнює: " + v));
+
+
     }
 
 }
