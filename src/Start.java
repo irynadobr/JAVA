@@ -13,7 +13,6 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 
@@ -85,7 +84,8 @@ public class Start {
         personList.forEach(System.out::println);
 
 
-        //2. Згенерувати map <Person,Integer>, де  у person зменшити вік на 5 років, integer -загальна кількість книжок, які має людина
+        //2. Згенерувати map <Person,Integer>, де  у person зменшити вік на 5 років, integer -загальна кількість книжок,
+        // які має людина
 
         Map<Person, Integer> personIntegerMap1 = persons.stream()
                 .peek(person -> person.setAge(person.getAge() - 5))
@@ -116,8 +116,6 @@ public class Start {
 
 
 System.out.println(people2+ " мають книжку за назвою Java");
-
-
 
 
     }
