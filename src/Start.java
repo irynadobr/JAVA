@@ -13,7 +13,7 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 
@@ -95,7 +95,8 @@ public class Start {
         personIntegerMap1.forEach((k, v) ->
                 System.out.println(k + "\r\n" + "загальна кількість книжок, які має " + k.getName() + ", дорівнює: " + v));
 
-        //3. Згенерувати map List<Person>, де Person- люди, у яких є книжка за назвою JAVA/
+        //3. Згенерувати map List<Person>, де Person- люди, у яких є книжка за назвою "Java"/
+
 
         List<Person> people = persons.stream()
                 .filter(person -> person.getBooks().stream()
@@ -105,6 +106,19 @@ public class Start {
                 System.out.println(k + "\r\n" + k.getName() + " має книжку за назвою Java"));
 
 
-    }
+        //or Згенерувати стрічку person, у яких є книжка "Java"
 
+    String people2 = persons.stream()
+                .filter(person -> person.getBooks().stream()
+                        .anyMatch(book -> "Java".equals(book.getNameBook())))
+            .map(person -> person.getName())
+            .reduce((s1,s2)->s1+","+s2).get();
+
+
+System.out.println(people2+ " мають книжку за назвою Java");
+
+
+
+
+    }
 }
