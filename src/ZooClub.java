@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.*;
 
 public class ZooClub {
@@ -63,6 +62,7 @@ public class ZooClub {
         String sk = scanner.next();
         return sk;
     }
+
 
 
     public Person person() {
