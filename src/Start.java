@@ -35,54 +35,53 @@ public class Start {
                     }
                 }
             }
-               System.out.println(club);
+            System.out.println(club);
 
-                boolean choice = true;
-                while (choice) {
-                    zooClub.menu();
+            boolean choice = true;
+            while (choice) {
+                zooClub.menu();
 
-                    switch (zooClub.scannerInt("зробіть свій вибір: ")) {
-                        case 1:
-                            zooClub.addPerson();
-                            break;
-                        case 2:
-                            //додати тваринку до учасника клубу по  person:
-                            zooClub.addPetPerson();
-                            //додати тваринку до учасника клубу по id person:
-                            zooClub.addPetPersonId();
-                            break;
-                        case 3:
+                switch (zooClub.scannerInt("зробіть свій вибір: ")) {
+                    case 1:
+                        zooClub.addPerson();
+                        break;
+                    case 2:
+                        //додати тваринку до учасника клубу по  person:
+                        zooClub.addPetPerson();
+                        //додати тваринку до учасника клубу по id person:
+                        zooClub.addPetPersonId();
+                        break;
+                    case 3:
 
-                            zooClub.removePetWithPerson();
+                        zooClub.removePetWithPerson();
 
-                            break;
-                        case 4:
+                        break;
+                    case 4:
 
-                            zooClub.removePerson();
-                            break;
-                        case 5:
-                            zooClub.removePetAllPerson(club);
+                        zooClub.removePerson();
+                        break;
+                    case 5:
+                        zooClub.removePetAllPerson(club);
 
-                            break;
-                        case 6:
-                            zooClub.printZooClub(club);
-                            break;
-                        case 7:
+                        break;
+                    case 6:
+                        zooClub.printZooClub(club);
+                        break;
+                    case 7:
 
-                            choice = false;
-                            break;
+                        choice = false;
+                        break;
 
-                        default:
-                            System.out.println("Введено не коректний номер, зробіть свій вибір ще раз: ");
-                            break;
-                    }
+                    default:
+                        System.out.println("Введено не коректний номер, зробіть свій вибір ще раз: ");
+                        break;
                 }
-
-        }
-            catch(
-                    IOException e){
-                e.printStackTrace();
             }
 
+        } catch (
+                IOException e) {
+            e.printStackTrace();
         }
+
     }
+}
