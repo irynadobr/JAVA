@@ -29,8 +29,7 @@ public class Start {
                         if (words2.length > 1) {
                             pets.add(new Pet(Integer.parseInt(words3[0].trim()), words3[1], Integer.parseInt(words3[2].trim())));
                         } else {
-                            Person person = new Person(Integer.parseInt(words3[0].trim()), words3[1], Integer.parseInt(words3[2].trim()), words3[3]);
-                            club.put(person, pets);
+                            club.put(new Person(Integer.parseInt(words3[0].trim()), words3[1], Integer.parseInt(words3[2].trim()), words3[3]), pets);
                         }
                     }
                 }
