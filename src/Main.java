@@ -4,14 +4,6 @@
 // Написати клас ContentPrinter, який в потоці виводитиме на екран вміст LineStorage.
 // Синхронізувати потоки таким чином, щоб ContentPrinter не виводив один і той же ж рядок декілька разів.
 //
-//        Додаткові завдання
-//        1. Переписати ContentPrinter так, щоб він не тільки виводив на консоль, а й переписував текст в інший файл.
-//        2. Створити ще один клас, WordWriter, який буде в потоці парсити рядок тексту з LineStorage,
-//        розбивати його на окремі слова і записувати їх в ще інший файл
-//
-//        Підказки:
-//        1. Тут крім synchonized треба буде ще монітор заюзати (методи wait i notify з Object)
-//        2. В неті є схожий приклад - https://coderanch.com/t/454912/certification/Multithread-program-khalid-mughal
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
